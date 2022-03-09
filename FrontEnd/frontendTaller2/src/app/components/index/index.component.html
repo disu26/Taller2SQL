@@ -1,0 +1,29 @@
+<ul>
+  <li *ngFor="let contact  of contacts ">
+    <h3> {{contact.id}}</h3>
+    <h3> {{contact.name}}</h3>
+    <input *ngIf="switch == 'ActualizarNombre'" type="text" value="{{contact.name}}" (change)="ActualizarNombre($event , contact.id)">
+
+    <h3> {{contact.phone}}</h3>
+    <input *ngIf="switch == 'ActualizarTelefono'" type="text" value="{{contact.phone}}" (change)="ActualizarTelefono($event , contact.id)">
+
+    <h3> {{contact.email}}</h3>
+    <input *ngIf="switch == 'ActualizarEmail'" type="text" value="{{contact.email}}" (change)="ActualizarEmail($event , contact.id)">
+
+    <h3> {{contact.dateBirth}}</h3>
+    <input *ngIf="switch == 'ActualizarFechaNacimiento'" type="date" value="{{contact.dateBirth}}" (change)="ActualizarFechaNacimiento($event , contact.id)">
+
+    <a [routerLink]="['/Actualizar',contact.id]">
+      <h3 id="botonActualizar" >Actualizar</h3>
+    </a>
+    <input type="button" id="botonAct" value="Actualizar Nombre" (click)="actualizarNombreBandera()">
+    
+    <input type="button"  id="botonAct" value="Actualizar Telefono" (click)="actualizarTelefonoBandera()">
+
+    <input type="button"  id="botonAct" value="Actualizar Email" (click)="actualizarEmailBandera()">
+
+    <input type="button" id="botonAct" value="Actualizar Fecha Nacimiento" (click)="actualizarFechaNacimientoBandera()">
+
+    <input type="button" id="botonBorrar" value="Borrar" (click)="borrarContacto(contact.id)" >
+  </li>
+</ul>

@@ -33,5 +33,5 @@ public class Contact implements Serializable {
     private String email;
 
     @Column(name = "cont_date_birth")
-    private Date dateBirth;
+    private String dateBirth;
 }

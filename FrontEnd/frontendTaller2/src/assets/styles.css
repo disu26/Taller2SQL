@@ -1,0 +1,74 @@
+/*Generales*/
+*{
+  margin: 0px;
+  padding: 0px;
+}
+body{
+  font-family: "Courier New",Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  background-attachment: fixed;
+}
+.clearfix{
+  float: none;
+  clear: both;
+}
+
+/*Contenido Principal*/
+#content{
+  min-height: 1100px;
+  width: 100%;
+  margin:0px auto;
+  box-shadow: 0px 0px  40px black;
+  background: white;
+  padding-top: 120px;
+  padding-bottom: 18%;
+}
+
+#botonActualizar{
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  margin-top: 15px;
+  color: white;
+  background: green;
+  border: 1px solid rgb(53,103,164,0.8);
+  cursor: pointer;
+}
+#botonActualizar:hover{
+  color: black;
+}
+
+#botonActualizar{
+  width: 12%;
+  margin-right: 10px;
+  text-decoration: none;
+  border: none;
+}
+
+#botonAct{
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  margin-top: 15px;
+  color: white;
+  background: green;
+  border: 1px solid rgb(53,103,164,0.8);
+  cursor: pointer;
+}
+#botonAct:hover{
+  color: black;
+}
+
+#botonBorrar{
+  display: block;
+  font-size: 17px;
+  padding: 10px;
+  margin-top: 15px;
+  color: white;
+  background: red;
+  border: 1px solid rgb(53,103,164,0.8);
+  cursor: pointer;
+}
+#botonBorrar:hover{
+  color: black;
+}

@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>{{title}}</h2>
+  <hr>
+  <form #commentForm="ngForm" (ngSubmit)="onSubmit(commentForm)" class="row g-3">
+
+    <div class="row-auto">
+      <label >Nombre</label>
+      <input class="form-control" name="name" placeholder="Nombre" id="inputCrear" #name="ngModel" [(ngModel)]="contact.name"  required>
+      <span class="form_error" *ngIf="name.touched && !name.valid">
+                Esta informacion es requerida
+            </span>
+
+    </div>
+
+    <div class="row-auto">
+      <label >Numero de Telefono</label>
+      <input class="form-control" name="phone" placeholder="Telefono" id="inputCrear" #phone="ngModel" [(ngModel)]="contact.phone"  required>
+      <span class="form_error" *ngIf="phone.touched && !phone.valid">
+                Esta informacion es requerida
+            </span>
+    </div>
+
+    <div class="row-auto">
+      <label >Correo Electronico</label>
+      <input class="form-control" name="email" placeholder="Correo Electronico" id="inputCrear" #email="ngModel" [(ngModel)]="contact.email"  required>
+      <span class="form_error" *ngIf="email.touched && !email.valid">
+                Esta informacion es requerida
+            </span>
+    </div>
+
+    <div class="row-auto">
+      <label >Fecha de Nacimiento</label>
+      <input class="form-control" type="date" name="date" placeholder="Fecha de Nacimiento" id="inputCrear" #dateBirth="ngModel" [(ngModel)]="contact.dateBirth"  >
+
+    </div>
+
+    <div class="row-auto">
+      <button [disabled]="!commentForm.form.valid" type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+
+
+</div>

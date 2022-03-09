@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS contact(
   cont_name VARCHAR(45) NOT NULL,
   cont_phone VARCHAR(15) NOT NULL,
   cont_email VARCHAR(45) NOT NULL,
-  cont_date_birth DATE NULL,
+  cont_date_birth VARCHAR(15) NULL,
   PRIMARY KEY (cont_id),
   UNIQUE INDEX cont_name_UNIQUE (cont_name ASC) VISIBLE
 ) ENGINE = InnoDB;
