@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Column;
 import java.io.Serializable;
+import java.util.Date;
 
 @Data
 @Entity
@@ -32,5 +33,5 @@ public class Contact implements Serializable {
     private String email;
 
     @Column(name = "cont_date_birth")
-    private String dateBirth;
+    private Date dateBirth;
 }

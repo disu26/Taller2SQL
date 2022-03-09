@@ -19,7 +19,7 @@ public class Contact {
 
     private Response response = new Response();
 
-    @GetMapping(path = "/products")
+    @GetMapping(path = "/contacts")
     public Response lista(){
         try{
             response.data = contactService.list();
@@ -31,7 +31,7 @@ public class Contact {
         return response;
     }
 
-    @PostMapping(path = "/products")
+    @PostMapping(path = "/contact")
     public ResponseEntity<Response> create(com.taller2.domain.Contact contact){
         response.data = contact;
         try{
@@ -51,42 +51,42 @@ public class Contact {
         }
     }
 
-    @DeleteMapping(path = "/products/{id}")
+    @DeleteMapping(path = "/contact/{id}")
     public ResponseEntity<com.taller2.domain.Contact> delete(com.taller2.domain.Contact contact){
         log.info("Contacto a Borrar: {}", contact);
-        contactService.save(contact);
+        contactService.delete(contact);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
-    @PutMapping(path = "/products/{id}")
+    @PutMapping(path = "/contact/{id}")
     public ResponseEntity<com.taller2.domain.Contact> update(com.taller2.domain.Contact contact, @PathVariable("id") Long id){
         log.info("Contacto a modificar: {}", contact);
         contactService.update(id, contact);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
-    @PatchMapping(path = "/product/name/{id}")
+    @PatchMapping(path = "/contact/name/{id}")
     public ResponseEntity<com.taller2.domain.Contact> updateName(com.taller2.domain.Contact contact, @PathVariable("id") Long id) {
         log.info("Contacto a modificar nombre: {}", contact);
         contactService.updateName(id, contact);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
-    @PatchMapping(path = "/product/name/{id}")
+    @PatchMapping(path = "/contact/phone/{id}")
     public ResponseEntity<com.taller2.domain.Contact> updatePhone(com.taller2.domain.Contact contact, @PathVariable("id") Long id) {
         log.info("Contacto a modificar telefono: {}", contact);
         contactService.updatePhone(id, contact);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
-    @PatchMapping(path = "/product/email/{id}")
+    @PatchMapping(path = "/contact/email/{id}")
     public ResponseEntity<com.taller2.domain.Contact> updateEmail(com.taller2.domain.Contact contact, @PathVariable("id") Long id){
         log.info("Contacto a modificar email: {}", contact);
         contactService.updateEmail(id, contact);
         return new ResponseEntity<>(contact, HttpStatus.OK);
     }
 
-    @PatchMapping(path = "/product/dateBirth/{id}")
+    @PatchMapping(path = "/contact/dateBirth/{id}")
     public ResponseEntity<com.taller2.domain.Contact> updateDateBirth(com.taller2.domain.Contact contact, @PathVariable("id") Long id){
         log.info("Contacto a modificar fecha de nacimiento: {}", contact);
         contactService.updateDateBirth(id, contact);

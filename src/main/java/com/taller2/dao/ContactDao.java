@@ -6,10 +6,12 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
+import java.util.Date;
+
 public interface ContactDao extends CrudRepository<Contact, Long> {
 
     @Modifying
-    @Query("update Contact cont set cont.name = :nombre where cont.id = :id")
+    @Query("update Contact cont set cont.name = :name where cont.id = :id")
     public void updateName(
             @Param(value = "id") Long id,
             @Param(value = "name") String name
@@ -33,6 +35,6 @@ public interface ContactDao extends CrudRepository<Contact, Long> {
     @Query("update Contact cont set cont.dateBirth = :dateBirth where cont.id = :id")
     public void updateDateBirth(
             @Param(value = "id") Long id,
-            @Param(value = "dateBirth") String dateBirth
+            @Param(value = "dateBirth") Date dateBirth
     );
 }
